@@ -9,6 +9,11 @@ import ErrorAlert from "../../components/ui/error-alert";
 
 const FilteredEventPage = () => {
   const router = useRouter();
+
+  if (!router.isReady) {
+    return null;
+  }
+  // console.log(router.isReady);
   const filterData = router.query.slug;
 
   const filteredYear = filterData[0];
